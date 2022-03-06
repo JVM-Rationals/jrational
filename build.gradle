@@ -1,0 +1,139 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'me.champeau.jmh' version '0.6.6'
+    id 'com.diffplug.spotless' version '6.3.0'
+    id 'maven-publish'
+    id 'signing'
+}
+
+group 'fr.spacefox'
+version '1.0.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:22.0.0'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
+jacoco {
+    toolVersion = "0.8.7"
+}
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                counter = 'CLASS'
+                minimum = 1.00
+            }
+            limit {
+                counter = 'BRANCH'
+                minimum = 0.95
+            }
+            limit {
+                counter = 'METHOD'
+                minimum = 1.00
+            }
+            limit {
+                counter = 'LINE'
+                minimum = 1.00
+            }
+            limit {
+                counter = 'INSTRUCTION'
+                minimum = 0.99
+            }
+        }
+    }
+}
+
+jmh {
+    warmupIterations = 2
+    iterations = 6
+    fork = 1
+}
+
+spotless {
+    java {
+        palantirJavaFormat('2.17.0')
+    }
+}
+
+// Publication stuff
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            pom {
+                name = 'JRational'
+                description = 'A library to do maths with rational numbers.'
+                url = 'https://github.com/SpaceFox/jrational'
+                scm {
+                    connection = 'scm:git:https://github.com/SpaceFox/jrational.git'
+                    developerConnection = 'scm:svn:https://github.com/SpaceFox/jrational.git'
+                    url = 'https://github.com/SpaceFox/jrational.git'
+                }
+
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'SpaceFox'
+                        name = 'SpaceFox'
+                        email = 'SpaceFox@users.noreply.github.com'
+                    }
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            credentials {
+                username = project.ossrhUsername
+                password = project.ossrhPassword
+            }
+            def releasesRepoUrl = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
+            def snapshotsRepoUrl = 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+        }
+    }
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
+
+javadoc {
+    if (JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+    configure(options) {
+        tags(
+                'apiNote:a:API Note:',
+                'implSpec:a:Implementation Requirements:',
+                'implNote:a:Implementation Note:'
+        )
+    }
+}

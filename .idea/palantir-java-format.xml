@@ -1,0 +1,26 @@
+<project version="4">
+  <component name="PalantirJavaFormatSettings">
+    <option name="enabled" value="true"/>
+    <option name="implementationClassPath">
+      <list>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/com.palantir.javaformat/palantir-java-format/1.1.0/8927043ce5725c41680b33a4cf92367600e4451d/palantir-java-format-1.1.0.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/com.palantir.javaformat/palantir-java-format-spi/1.1.0/1bcebf6880ad5cefc6a322c747968282f7837bac/palantir-java-format-spi-1.1.0.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/27.0.1-jre/bd41a290787b5301e63929676d792c507bbc00ae/guava-27.0.1-jre.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/com.google.errorprone/javac-shaded/9+181-r4173-1/a399ee380b6d6b6ea53af1cfbcb086b108d1efb7/javac-shaded-9+181-r4173-1.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/org.functionaljava/functionaljava/4.8/4ba128b3201038d3088a06b2f33fac17d65ad817/functionaljava-4.8.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.11.1/def9f0a127bce25b6bf561a96ed4abb2b18483ff/jackson-datatype-jdk8-2.11.1.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.11.1/b76ec7e362c9b02a5c5ba67f9d9293ccd7de480a/jackson-module-parameter-names-2.11.1.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.11.1/f5d24a1dcf46000316d40c8c61196c48dd5677c5/jackson-databind-2.11.1.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/2.5.2/cea74543d5904a30861a61b4643a5f2bb372efc4/checker-qual-2.5.2.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.2.0/88e3c593e9b3586e1c6177f89267da6fc6986f0c/error_prone_annotations-2.2.0.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.1/ed28ded51a8b1c6b112568def5f4b455e6809019/j2objc-annotations-1.1.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.17/f97ce6decaea32b36101e37979f8b647f00681fb/animal-sniffer-annotations-1.17.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.11.1/f083c4ac0fb8b3c6b8d5b62cd54122228ef62cee/jackson-annotations-2.11.1.jar"/>
+        <option value="file:/home/spacefox/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.11.1/8b02908d53183fdf9758e7e20f2fdee87613a962/jackson-core-2.11.1.jar"/>
+      </list>
+    </option>
+  </component>
+</project>
