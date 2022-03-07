@@ -58,6 +58,8 @@ jacocoTestCoverageVerification {
         }
     }
 }
+tasks.check.dependsOn jacocoTestReport
+tasks.check.dependsOn jacocoTestCoverageVerification
 
 jmh {
     warmupIterations = 2
@@ -76,13 +78,15 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             pom {
+                groupId = project.group
                 name = 'JRational'
+                from components.java
                 description = 'A library to do maths with rational numbers.'
-                url = 'https://github.com/SpaceFox/jrational'
+                url = 'https://github.com/JVM-Rationals/jrational'
                 scm {
-                    connection = 'scm:git:https://github.com/SpaceFox/jrational.git'
-                    developerConnection = 'scm:svn:https://github.com/SpaceFox/jrational.git'
-                    url = 'https://github.com/SpaceFox/jrational.git'
+                    connection = 'scm:git:https://github.com/JVM-Rationals/jrational.git'
+                    developerConnection = 'scm:svn:https://github.com/JVM-Rationals/jrational.git'
+                    url = 'https://github.com/JVM-Rationals/jrational.git'
                 }
 
                 licenses {
@@ -109,8 +113,8 @@ publishing {
                 username = project.ossrhUsername
                 password = project.ossrhPassword
             }
-            def releasesRepoUrl = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
-            def snapshotsRepoUrl = 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
+            def releasesRepoUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+            def snapshotsRepoUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
             url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
         }
     }
