@@ -35,7 +35,9 @@ an approximate Rational will always have an approximate as result.
 
 ## Technical data
 
-This project requires Java 11+. It doesn’t have any runtime dependency.
+This project requires Java 11+.
+
+It doesn’t have any runtime dependency except the `java.base` module.
 
 # How to use it in my project?
 
@@ -43,9 +45,15 @@ This library will be available on Maven Central.
 
 [TODO: Add import declarations]
 
-# Public API
+# Documentation
+
+## Public API
 
 See Javadoc for details.
+
+## JRational versions
+
+JRational uses [semver](https://semver.org).
 
 # Contributions welcome!
 
