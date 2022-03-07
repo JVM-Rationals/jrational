@@ -1,14 +1,14 @@
 package fr.spacefox.jrational;
 
-import java.math.BigInteger;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.math.BigInteger;
+import org.junit.jupiter.api.Test;
 
 class RationalToolingTest {
 
