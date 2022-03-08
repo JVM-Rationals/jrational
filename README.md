@@ -49,11 +49,11 @@ This library will be available on Maven Central.
 
 ## Public API
 
-See Javadoc for details.
+[See Javadoc for details](https://jvm-rationals.github.io/jrational/).
 
 ## JRational versions
 
-JRational uses [semver](https://semver.org).
+JRational follows [semver](https://semver.org).
 
 # Contributions welcome!
 
