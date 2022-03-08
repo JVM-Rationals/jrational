@@ -41,9 +41,29 @@ It doesn’t have any runtime dependency except the `java.base` module.
 
 # How to use it in my project?
 
-This library will be available on Maven Central.
+This library will be available [on Maven Central / Sonatype](https://search.maven.org/artifact/fr.spacefox/jrational)
+and [on MVN Repository](https://mvnrepository.com/artifact/fr.spacefox/jrational).
 
-[TODO: Add import declarations]
+Import declarations:
+
+Maven:
+```xml
+<dependency>
+  <groupId>fr.spacefox</groupId>
+  <artifactId>jrational</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+</dependency>
+```
+
+Gradle (Groovy DSL):
+```groovy
+implementation 'fr.spacefox:jrational:1.0.0-SNAPSHOT'
+```
+
+Gradle (Kotlin DSL):
+```kotlin
+implementation("fr.spacefox:jrational:1.0.0-SNAPSHOT")
+```
 
 # Documentation
 
@@ -54,6 +74,21 @@ This library will be available on Maven Central.
 ## JRational versions
 
 JRational follows [semver](https://semver.org).
+
+## What’s next?
+
+### Before release v1.0.0
+
+- [ ] Rational exponentiation (including roots, which is just exponentiation with `1/n` exponent).
+
+Expected soon™.
+
+### Futures versions
+
+- [ ] Trigonometric functions
+- [ ] Logarithm and exponentiation
+
+Expected when I have time and motivation.
 
 # Contributions welcome!
 
