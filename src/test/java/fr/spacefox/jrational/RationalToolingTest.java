@@ -2,7 +2,6 @@ package fr.spacefox.jrational;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -11,19 +10,6 @@ import java.math.BigInteger;
 import org.junit.jupiter.api.Test;
 
 class RationalToolingTest {
-
-    private static final Rational PI1000DIGITS = Rational.of("3.14159265358979323846264338327950288419716939937510582"
-                    + "09749445923078164062862089986280348253421170679821480865132823066470938446095505822317253594081284811174"
-                    + "50284102701938521105559644622948954930381964428810975665933446128475648233786783165271201909145648566923"
-                    + "46034861045432664821339360726024914127372458700660631558817488152092096282925409171536436789259036001133"
-                    + "05305488204665213841469519415116094330572703657595919530921861173819326117931051185480744623799627495673"
-                    + "51885752724891227938183011949129833673362440656643086021394946395224737190702179860943702770539217176293"
-                    + "17675238467481846766940513200056812714526356082778577134275778960917363717872146844090122495343014654958"
-                    + "53710507922796892589235420199561121290219608640344181598136297747713099605187072113499999983729780499510"
-                    + "59731732816096318595024459455346908302642522308253344685035261931188171010003137838752886587533208381420"
-                    + "61717766914730359825349042875546873115956286388235378759375195778185778053217122680661300192787661119590"
-                    + "9216420198")
-            .canonicalForm();
 
     @Test
     void magnitude() {
@@ -55,16 +41,12 @@ class RationalToolingTest {
 
     @Test
     void approximate() {
-        assertThrows(ArithmeticException.class, () -> Rational.PI.approximate(BigInteger.ZERO));
-        assertThrows(ArithmeticException.class, () -> Rational.PI.approximate(-42));
+        assertThrows(ArithmeticException.class, () -> RationalConstants.PI.approximate(BigInteger.ZERO));
+        assertThrows(ArithmeticException.class, () -> RationalConstants.PI.approximate(-42));
 
-        assertNotEquals(0, Rational.PI.compareTo(PI1000DIGITS));
-        assertEquals(0, Rational.PI.compareTo(PI1000DIGITS.approximate()));
-
-        assertEquals(0, Rational.of(355, 113).compareTo(Rational.PI.approximate(113)));
-        assertEquals(0, Rational.of(22, 7).compareTo(Rational.PI.approximate(7)));
-        assertEquals(0, Rational.of(3).compareTo(Rational.PI.approximate(1)));
-        assertEquals(Math.PI, Rational.PI.doubleValue());
+        assertEquals(0, Rational.of(355, 113).compareTo(RationalConstants.PI.approximate(113)));
+        assertEquals(0, Rational.of(22, 7).compareTo(RationalConstants.PI.approximate(7)));
+        assertEquals(0, Rational.of(3).compareTo(RationalConstants.PI.approximate(1)));
 
         final Rational a = Rational.of(1_000_000_001L, 1_000_000_000L);
         assertSame(a, a.approximate(10_000_000_000L));

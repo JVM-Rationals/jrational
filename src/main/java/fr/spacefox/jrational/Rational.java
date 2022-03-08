@@ -70,14 +70,6 @@ public final class Rational extends Number implements Comparable<Rational> {
     public static final Rational APPROX_ZERO = new Rational(BigInteger.ZERO, BigInteger.ONE, true);
     public static final Rational APPROX_ONE = new Rational(BigInteger.ONE, BigInteger.ONE, true);
 
-    /**
-     * Approximate form of pi, with enough precision to not be modified by {@code approximate()} method, canonical form.
-     */
-    public static final Rational PI = new Rational(
-            new BigInteger("1069028584064966747859680373161870783301"),
-            new BigInteger("340282366920938463463374607431768211456"),
-            true);
-
     // The scale required to handle double values in BigDecimal objects without precision lose (assume rational has been
     // created from double values, therefore conversion can be exact).
     private static final int DOUBLE_REQUIRED_SCALE = 1074; // = new BigDecimal(Double.MIN_VALUE).scale();
@@ -125,6 +117,12 @@ public final class Rational extends Number implements Comparable<Rational> {
         final BigInteger realDen = denominator.signum() == 1 ? denominator : denominator.negate();
 
         return new Rational(realNum, realDen, approximate);
+    }
+
+    // Used in RationalConstants
+    @NotNull
+    static Rational approximateOf(@NotNull BigInteger numerator, @NotNull BigInteger denominator) {
+        return of(numerator, denominator, true);
     }
 
     // For testing purpose only!
